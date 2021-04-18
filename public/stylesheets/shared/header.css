@@ -1,0 +1,68 @@
+:root{
+    --nav-title-font-size: 3rem;
+    --nav-title-font-weight: bold;
+    --nav-subtitle-font-size: 2rem;
+    --nav-subtitle-font-weight: bold;
+    --nav-link-font-weight: 300;
+
+}
+
+.header-title {
+    width: 51%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: var(--nav-title-font-size);
+    font-weight: var(--nav-title-font-weight);
+    border-bottom: 1px solid #ccc;
+}
+
+.header-subtitle {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: var(--nav-subtitle-font-size);
+    font-weight: var(--nav-subtitle-font-weight);
+}
+
+.header-nav {
+    display: table;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.header-nav-ul {
+    display: block;
+    flex-flow: column wrap;
+    justify-content:space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav li {
+    list-style: none;
+}
+
+.header-nav li a {  
+    text-decoration: none;
+    display: block;
+    color: var(--color-text-light);
+    font-weight: var(--nav-link-font-weight);
+    padding: 0.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255,0.3); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header-title:hover{
+    color: white;
+}
+
+.header-nav li a:hover {
+    background: rgb(128, 115, 0);
+}
+  

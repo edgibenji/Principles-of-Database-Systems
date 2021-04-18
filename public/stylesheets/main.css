@@ -1,21 +1,30 @@
 @import 'shared/fonts.css';
 @import 'shared/variables.css';
+@import 'shared/header.css';
 
 :root{
-    font-family: 'Apple Garamond';
+    font-family: 'Berkahi Blackletter';
     font-size: 30px;
     font-weight: light;
     color: var(--color-text-light);
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body{
     background: linear-gradient(
-        to right, var(--color-background-dark), 
+        to bottom, var(--color-background-dark), 
         var(--color-background-light));
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 2400px;
     margin: auto;
-    margin-bottom: 3rem;
-  }
+    margin-bottom: 10rem;
+}
+
+.inner-container {
+    margin: 0 2rem;
+}
