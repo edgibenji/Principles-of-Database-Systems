@@ -1,6 +1,7 @@
 @import 'shared/fonts.css';
 
 :root{
-    font-family: 'Spongeboy Me Bob';
+    font-family: 'Apple Garamond';
     font-size: 20px;
+    font-weight: light;
 }

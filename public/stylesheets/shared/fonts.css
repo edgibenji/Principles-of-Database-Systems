@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Apple Garamond';
-    src: url('AppleGaramond-Bold.woff2') format('woff2'),
-        url('AppleGaramond-Bold.woff') format('woff');
+    src: url('/fonts/AppleGaramond-Bold.woff2') format('woff2'),
+        url('/fonts/AppleGaramond-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Apple Garamond';
-    src: url('AppleGaramond.woff2') format('woff2'),
-        url('AppleGaramond.woff') format('woff');
+    src: url('/fonts/AppleGaramond.woff2') format('woff2'),
+        url('/fonts/AppleGaramond.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: 'Apple Garamond';
-    src: url('AppleGaramond-BoldItalic.woff2') format('woff2'),
-        url('AppleGaramond-BoldItalic.woff') format('woff');
+    src: url('/fonts/AppleGaramond-BoldItalic.woff2') format('woff2'),
+        url('/fonts/AppleGaramond-BoldItalic.woff') format('woff');
     font-weight: bold;
     font-style: italic;
     font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face {
     font-family: 'Fragment Core';
-    src: url('FragmentCoreRom.woff2') format('woff2'),
-        url('FragmentCoreRom.woff') format('woff');
+    src: url('/fonts/FragmentCoreRom.woff2') format('woff2'),
+        url('/fonts/FragmentCoreRom.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -36,8 +36,8 @@
 
 @font-face {
     font-family: 'Apple Garamond';
-    src: url('AppleGaramondLight.woff2') format('woff2'),
-        url('AppleGaramondLight.woff') format('woff');
+    src: url('/fonts/AppleGaramondLight.woff2') format('woff2'),
+        url('/fonts/AppleGaramondLight.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -45,8 +45,8 @@
 
 @font-face {
     font-family: 'Apple Garamond';
-    src: url('AppleGaramond-Italic.woff2') format('woff2'),
-        url('AppleGaramond-Italic.woff') format('woff');
+    src: url('/fonts/AppleGaramond-Italic.woff2') format('woff2'),
+        url('/fonts/AppleGaramond-Italic.woff') format('woff');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
@@ -54,8 +54,8 @@
 
 @font-face {
     font-family: 'Spongeboy Me Bob';
-    src: url('SpongeboyMeBob.woff2') format('woff2'),
-        url('SpongeboyMeBob.woff') format('woff');
+    src: url('/fonts/SpongeboyMeBob.woff2') format('woff2'),
+        url('/fonts/SpongeboyMeBob.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -63,8 +63,8 @@
 
 @font-face {
     font-family: 'Apple Garamond';
-    src: url('AppleGaramondLight-Italic.woff2') format('woff2'),
-        url('AppleGaramondLight-Italic.woff') format('woff');
+    src: url('/fonts/AppleGaramondLight-Italic.woff2') format('woff2'),
+        url('/fonts/AppleGaramondLight-Italic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
