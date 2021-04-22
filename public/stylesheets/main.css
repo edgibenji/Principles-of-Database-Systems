@@ -2,6 +2,7 @@
 @import 'shared/variables.css';
 @import 'shared/header.css';
 @import 'shared/buttons.css';
+@import 'shared/form.css';
 
 :root{
     font-family: 'Berkahi Blackletter';
@@ -21,9 +22,9 @@ body{
 }
 
 .container {
-    max-width: 2400px;
+    max-width: 1200px;
     margin: auto;
-    margin-bottom: 10rem;
+    margin-bottom: 3rem;
 }
 
 .inner-container {
@@ -32,6 +33,6 @@ body{
 
 .page-header {
     font-family: 'AppleGaramond-Bold';
-    font-size: 2rem;
+    font-size: 1.70rem;
     font-weight: 500;
 }
