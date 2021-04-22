@@ -1,4 +1,4 @@
-<h2>Search Authors</h2>
+<h2 class = "page-header">Search Authors</h2>
 <form action="/authors" method="GET">
     <div>
         <label>Name</label>
@@ -11,12 +11,17 @@
     <div>
         <%= author.fullName %>
     </div>
-    <div>
-        <a href="/authors/<%= author.id %>">
-            <img height="150" width="150" src="<%= author.coverImagePath %>">
-        </a>
-    </div>
-    <a href="/authors/<%= author.id %>">View</a>
-    <a href="/authors/<%= author.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
+    <div class = "btn-row">
+        <div>
+            <a href="/authors/<%= author.id %>">
+                <img height="150" width="150" src="<%= author.coverImagePath %>">
+            </a>
+        </div>
+        
+        <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>
+        <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
+        <%- include('../partials/deleteForm', 
+                    { url: `/authors/${author.id}` }) %>
+        
         <% }) %>
+    </div>

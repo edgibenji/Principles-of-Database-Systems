@@ -1,6 +1,7 @@
 @import 'shared/fonts.css';
 @import 'shared/variables.css';
 @import 'shared/header.css';
+@import 'shared/buttons.css';
 
 :root{
     font-family: 'Berkahi Blackletter';
@@ -27,4 +28,10 @@ body{
 
 .inner-container {
     margin: 0 2rem;
+}
+
+.page-header {
+    font-family: 'AppleGaramond-Bold';
+    font-size: 2rem;
+    font-weight: 500;
 }
