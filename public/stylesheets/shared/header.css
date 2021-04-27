@@ -3,8 +3,6 @@
 :root{
     --nav-title-font-size: 2rem;
     --nav-title-font-weight: bold;
-    --nav-subtitle-font-size: 1rem;
-    --nav-subtitle-font-weight: bold;
     --nav-link-font-weight: 300;
     --nav-bar-select-color: hsl(265, 43%, 36%);
 
@@ -16,13 +14,6 @@
     text-decoration: none;
     font-size: var(--nav-title-font-size);
     font-weight: var(--nav-title-font-weight);
-}
-
-.header-subtitle {
-    color: var(--color-text-light);
-    text-decoration: none;
-    font-size: var(--nav-subtitle-font-size);
-    font-weight: var(--nav-subtitle-font-weight);
 }
 
 .header-link {
@@ -65,10 +56,12 @@
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/*when mouse reach turn white*/
 .header-title:hover{
     color: white;
 }
 
+/*when mouse reach turn purple*/
 .header-nav li a:hover {
     background-color:rgb(130, 88, 207);
 }

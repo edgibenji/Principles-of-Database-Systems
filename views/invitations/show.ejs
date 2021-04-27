@@ -1,0 +1,12 @@
+<h1>Invitation</h1>
+<div>
+    ID: <%= invitation.id %>
+</div>
+<div>
+    Author: <%= invitation.author.fullName %>
+</div>
+<div>
+    Event: <%= invitation.event.name %>
+</div>
+<a href="/authors/<%= invitation.author.id %>">View Author</a>
+<a href="/events/<%= invitation.event.id %>">View Event</a>

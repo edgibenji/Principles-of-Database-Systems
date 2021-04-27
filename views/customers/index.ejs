@@ -1,4 +1,4 @@
-<h2 class = "page-header">Search Customers</h2>
+<h2>Search Customers</h2>
 <form action="/customers" method="GET">
     <div>
         <label>Name</label>
@@ -7,7 +7,7 @@
     <button type="submit">Search</button>
 </form>
 <br>
-<% customers.forEach(customer=> { %>
+<% customers.forEach(customer => { %>
     <div>
         <%= customer.fullName %>
     </div>

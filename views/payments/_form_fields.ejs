@@ -1,3 +1,4 @@
+
 <div>
     <label>Customer</label>
     <select name="customer">
@@ -5,7 +6,19 @@
             <% if (customer.id===payment.customer) { %>
                 <option selected label="<%= customer.fullName %>" value="<%= customer.id %>">
                     <% } else { %>
-                <option label="<%= customer.fullName %>%>" value="<%= customer.id %>">
+                <option label="<%= customer.fullName %>" value="<%= customer.id %>">
+                    <% } %>
+                        <% }) %>
+    </select>
+</div>
+<div>
+    <label>Invoice</label>
+    <select name="invoice">
+        <% invoices.forEach(invoice => { %>
+            <% if (invoice.id===payment.invoice) { %>
+                <option selected label="<%= invoice.id %>" value="<%= invoice.id %>">
+                    <% } else { %>
+                <option label="<%= invoice.id %>" value="<%= invoice.id %>">
                     <% } %>
                         <% }) %>
     </select>
@@ -17,7 +30,13 @@
 </div>
 <div>
     <label>Method</label>
-    <input type="text" name="method" value="<%= payment.method %>">
+    <select name="method">
+        <option value="Cash">Cash</option>
+        <option value="Credit">Credit</option>
+        <option value="Debit">Debit</option>
+        <option value="Apple Pay">Apple Pay</option>
+        <option value="Paypal">Paypal</option>
+    </select>
 </div>
 <div>
     <label>Amount</label>
@@ -30,9 +49,4 @@
 <div>
     <label>Card Number</label>
     <input type="number" name="cardNumber" value="<%= payment.cardNumber %>">
-</div>
-<div>
-    <label>Card Expiration Date</label>
-    <input type="date" name="cardExpirationDate" value="<%= payment.cardExpirationDate == null ? '' :
-    payment.cardExpirationDate.toISOString().split('T')[0] %>">
 </div>

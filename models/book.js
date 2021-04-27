@@ -9,6 +9,10 @@ const bookSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    ISBN: {
+        type: Number,
+        required: true
+    },
     publishDate: {
         type: Date,
         required: true
@@ -34,6 +38,11 @@ const bookSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Author'
+    },
+    topic: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Topic'
     }
 })
 

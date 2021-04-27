@@ -1,7 +1,20 @@
+<h1>Author</h1>
 <h2>
     <%= author.fullName %>
 </h2>
 <img width="150" height="150" src="<%= author.coverImagePath %>">
+<div>
+    Role: <%= author.role %>
+</div>
+<div>
+    ID: <%= author.id %>
+</div>
+<div>
+    Username: <%= author.username %>
+</div>
+<div>
+    Password: <%= author.password %>
+</div>
 <div>
     Gender: <%= author.gender %>
 </div>
@@ -26,17 +39,11 @@
 <div>
     Country: <%= author.country %>
 </div>
-
-<div class="btn-row">
-    <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm', { url: `/authors/${author.id}` }) %>
-</div>
-
 <% if (booksByAuthor.length> 0) { %>
-        <h2 class="page-header">Books By Author</h2>
-        <% booksByAuthor.forEach(book=> { %>
-            <a href="/books/<%= book.id %>">
-                <img height="150" width="100" src="<%=book.coverImagePath %>">
-            </a>
-            <% }) %>
-                <% } %>
+    <h2>Books By Author</h2>
+    <% booksByAuthor.forEach(book=> { %>
+        <a href="/books/<%= book.id %>">
+            <img height="150" width="100" src="<%=book.coverImagePath %>">
+        </a>
+        <% }) %>
+            <% } %>

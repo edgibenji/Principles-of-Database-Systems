@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Payment = require('../models/payment')
 const Customer = require('../models/customer')
+const Invoice = require('../models/invoice')
 
 // all payments route
 router.get('/', async (req, res) => {
@@ -41,14 +42,13 @@ router.get('/new', async (req, res) => {
 router.post('/', async (req, res) => {
     const payment = new Payment({
         method: req.body.method,
+        invoice: req.body.invoice,
         customer: req.body.customer,
         payDate: new Date(req.body.payDate),
         amount: req.body.amount,
         cardHolderName: req.body.cardHolderName,
-        cardNumber: req.body.cardNumber,
-        cardExpirationDate: new Date(req.body.cardExpirationDate)
+        cardNumber: req.body.cardNumber
     })
-    console.log(payment)
     try {
         const newPayment = await payment.save()
         res.redirect(`payments/${newPayment.id}`)
@@ -61,6 +61,7 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const payment = await Payment.findById(req.params.id)
+            .populate('invoice')
             .populate('customer')
             .exec()
         res.render('payments/show', { payment : payment })
@@ -85,12 +86,12 @@ router.put('/:id', async (req, res) => {
     try {
         payment = await Payment.findById(req.params.id)
         payment.method = req.body.method
+        payment.invoice = req.body.invoice
         payment.customer = req.body.customer
         payment.payDate = new Date(req.body.payDate)
         payment.amount = req.body.amount
         payment.cardHolderName = req.body.cardHolderName
         payment.cardNumber = req.body.cardNumber
-        payment.cardExpirationDate = new Date(req.body.cardExpirationDate)
         await payment.save()
         res.redirect(`/payments/${payment.id}`)
     } catch {
@@ -110,9 +111,9 @@ router.delete('/:id', async (req, res) => {
         await payment.remove()
         res.redirect('/payments')
     } catch {
-        if (book != null) {
+        if (payment != null) {
             res.render('payments/show', {
-                book: book,
+                payment: payment,
                 errorMessage: 'Could Not Remove Payment'
             })
         } else {
@@ -131,8 +132,10 @@ async function renderEditPage(res, payment, hasError = false) {
 
 async function renderFormPage(res, payment, form, hasError = false) {
     try {
+        const invoices = await Invoice.find({})
         const customers = await Customer.find({})
         const params = {
+            invoices: invoices,
             customers: customers,
             payment: payment
         }

@@ -1,8 +1,19 @@
-<h2 class = "page-header">Recently Added</h2>
-<div>
-    <% books.forEach(book => { %>
-        <a href="/books/<%= book.id %>">
-        <img height="150" width="100" src="<%= book.coverImagePath %>">
-        </a>
-        <% }) %>
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+            <a class = 'index-text' href='/customer/login'>Customer Login</a>
+    </div>
+
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/author/login'>Author Login</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/customer/register'>Customer Register</a>
+    </div>
+
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/author/register'>Author Register</a>
+    </div>
 </div>

@@ -1,0 +1,41 @@
+<h1>Dear Author</h1>
+<h2>
+    <%= author.fullName %>
+    <div><a href='author'>Logout</a></div>
+</h2>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+      <a class = 'index-text' href="/author/<%= author.id %>">Profile</a>
+    </div>
+    <div class = 'index-item-right'>
+      <a class = 'index-text' href='/books'>Books</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/books/new'>Add Book</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/topics'>Topics</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/events'>Events</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/invitations/new'>Add Invitation</a>
+    </div>
+</div>
+
+<div class = 'index-row'>
+    <div class = 'index-item-left'>
+        <a class = 'index-text' href='/sponsors/new'>Add Sponsor</a>
+    </div>
+    <div class = 'index-item-right'>
+        <a class = 'index-text' href='/funds/new'>Add Fund</a>
+    </div>
+</div>

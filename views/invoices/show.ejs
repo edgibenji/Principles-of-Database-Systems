@@ -1,0 +1,11 @@
+<h1>Invoice</h1>
+<div>
+    ID: <%= invoice.id %>
+</div>
+<div>
+    Date Generated: <%= invoice.dateGenerated.toDateString() %>
+</div>
+<div>
+    Amount: <%= invoice.amount %>
+</div>
+<a href="/rentals/<%= invoice.rental.id %>">View Rental</a>

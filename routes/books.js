@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Book = require('../models/book')
+const Topic = require('../models/topic')
 const Author = require('../models/author')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
@@ -36,7 +37,9 @@ router.get('/new', async (req, res) => {
 router.post('/', async (req, res) => {
     const book = new Book({
         title: req.body.title,
+        topic: req.body.topic,
         author: req.body.author,
+        ISBN: req.body.ISBN,
         publishDate: new Date(req.body.publishDate),
         pageCount: req.body.pageCount,
         description: req.body.description
@@ -55,6 +58,7 @@ router.get('/:id', async (req, res) => {
     try {
         const book = await Book.findById(req.params.id)
             .populate('author')
+            .populate('topic')
             .exec()
         res.render('books/show', { book: book })
     } catch {
@@ -78,7 +82,9 @@ router.put('/:id', async (req, res) => {
     try {
         book = await Book.findById(req.params.id)
         book.title = req.body.title
+        book.topic = req.body.topic
         book.author = req.body.author
+        book.ISBN = req.body.ISBN
         book.publishDate = new Date(req.body.publishDate)
         book.pageCount = req.body.pageCount
         book.description = req.body.description
@@ -107,7 +113,7 @@ router.delete('/:id', async (req, res) => {
         if (book != null) {
             res.render('books/show', {
                 book: book,
-                errorMessage: 'Could not remove book'
+                errorMessage: 'Could Not Remove Book'
             })
         } else {
             res.redirect('/')
@@ -126,8 +132,10 @@ async function renderEditPage(res, book, hasError = false) {
 async function renderFormPage(res, book, form, hasError = false) {
     try {
         const authors = await Author.find({})
+        const topics = await Topic.find({})
         const params = {
             authors: authors,
+            topics: topics,
             book: book
         }
         if (hasError) {

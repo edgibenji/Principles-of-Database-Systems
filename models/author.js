@@ -2,6 +2,19 @@ const mongoose = require('mongoose')
 const Book = require('./book')
 
 const authorSchema = new mongoose.Schema({
+    role: {
+        type: String,
+        required: true,
+        default: "AUTHOR"
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
     fullName: {
         type: String,
         required: true
