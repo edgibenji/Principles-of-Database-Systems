@@ -4,7 +4,8 @@
     --nav-title-font-size: 2rem;
     --nav-title-font-weight: bold;
     --nav-link-font-weight: 300;
-    --nav-bar-select-color: hsl(265, 43%, 36%);
+    --nav-bar-select-color: hsl(50, 47%, 22%);
+    --color-hover: hsl(49, 44%, 33%);
 
 }
 
@@ -58,11 +59,11 @@
 
 /*when mouse reach turn white*/
 .header-title:hover{
-    color: white;
+    color: var(--color-hover);
 }
 
 /*when mouse reach turn purple*/
 .header-nav li a:hover {
-    background-color:rgb(130, 88, 207);
+    background-color: var(--color-hover);
 }
   
