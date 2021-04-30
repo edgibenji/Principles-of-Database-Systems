@@ -38,3 +38,8 @@ body{
     font-size: 2rem;
     font-weight: 500;
 }
+
+.error-message {
+    font-family: 'Apple Garamond-Bold';
+    color: hsl(var(--color-danger-hue), 100%, 50%);
+}
