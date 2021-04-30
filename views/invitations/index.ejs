@@ -17,7 +17,12 @@
     <div>
         <%= invitation.id %>
     </div>
-    <a href="/invitations/<%= invitation.id %>">View</a>
-    <a href="/invitations/<%= invitation.id %>/edit">Edit</a>
+
+    <div class="form-row form-row-end btn-row">
+        <a class="btn btn-primary" 
+        href="/invitations/<%= invitation.id %>">View</a>
+        <a class="btn btn-primary" 
+        href="/invitations/<%= invitation.id %>/edit">Edit</a>
+    </div>
     <%- include('../partials/deleteForm', { url: `/invitations/${invitation.id}` }) %>
         <% }) %>

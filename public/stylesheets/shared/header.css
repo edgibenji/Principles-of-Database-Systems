@@ -1,7 +1,5 @@
-@import 'shared/fonts.css';
-
 :root{
-    --nav-title-font-size: 2rem;
+    --nav-title-font-size: 3rem;
     --nav-title-font-weight: bold;
     --nav-link-font-weight: 300;
     --nav-bar-select-color: hsl(50, 47%, 22%);
