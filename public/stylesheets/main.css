@@ -5,6 +5,7 @@
 @import 'shared/form.css';
 @import 'shared/author.css';
 @import 'shared/indices.css';
+@import 'shared/books.css';
 
 :root{
     font-family: 'Berkahi Blackletter';
@@ -17,7 +18,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background: linear-gradient(
         to bottom, var(--color-background-dark), 
         var(--color-background-light));
@@ -25,7 +26,7 @@ body{
 
 .container {
     max-width: 1400px;
-    margin: 3rem;
+    margin: 3rem; 
     margin-bottom: 3rem;
 }
 
@@ -41,5 +42,5 @@ body{
 
 .error-message {
     font-family: 'Apple Garamond-Bold';
-    color: hsl(var(--color-danger-hue), 100%, 50%);
+    color: hsl(0, 99%, 32%);
 }

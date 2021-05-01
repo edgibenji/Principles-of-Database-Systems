@@ -4,9 +4,9 @@ const Admin = require('../models/admin')
 
 // create admin
 let admin = new Admin({
-    username: "lzr6o",
-    password: "Qaq$2631",
-    fullName: "Zhengrui Li"
+    username: "edgibenji",
+    password: "123",
+    fullName: "Yulin Wang"
 })
 admin.save()
 

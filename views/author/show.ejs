@@ -38,12 +38,13 @@
 <div>
     Country: <%= author.country %>
 </div>
-<a href="/author/<%= author.id %>/edit">Edit</a>
-<% if (booksByAuthor.length> 0) { %>
-    <h2>Books By Author</h2>
-    <% booksByAuthor.forEach(book=> { %>
-        <a href="/books/<%= book.id %>">
-            <img height="150" width="100" src="<%=book.coverImagePath %>">
-        </a>
-        <% }) %>
-            <% } %>
+
+<div class="form-row form-row-end btn-row">
+    <a class="btn btn-primary" href="/author/<%= author.id %>/edit">Edit</a>
+</div>
+
+
+<% if (booksByAuthor.length > 0) { %>
+    <h2 class="page-header">Books By Author</h2>
+    <%- include('../partials/bookGrid', { books: booksByAuthor }) %>
+  <% } %>

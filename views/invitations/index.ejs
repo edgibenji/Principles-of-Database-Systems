@@ -14,8 +14,10 @@
 </form>
 <br>
 <% invitations.forEach(invitation => { %>
-    <div>
-        <%= invitation.id %>
+    <div class="author-row">
+        <div class="author-name">
+            <%= invitation.id %>
+        </div>
     </div>
 
     <div class="form-row form-row-end btn-row">
@@ -23,6 +25,6 @@
         href="/invitations/<%= invitation.id %>">View</a>
         <a class="btn btn-primary" 
         href="/invitations/<%= invitation.id %>/edit">Edit</a>
-    </div>
     <%- include('../partials/deleteForm', { url: `/invitations/${invitation.id}` }) %>
-        <% }) %>
+    </div>    
+    <% }) %>
