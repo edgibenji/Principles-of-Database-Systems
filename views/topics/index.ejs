@@ -12,10 +12,4 @@
     </div>
 </form>
 <br>
-<div>
-    <% topics.forEach(topic => { %>
-        <a href="/topics/<%= topic.id %>">
-            <img height="150" width="150" src="<%= topic.coverImagePath %>">
-        </a>
-        <% }) %>
-</div>
+<%- include('../partials/topicGrid', { topics: topics, large:true }) %>
