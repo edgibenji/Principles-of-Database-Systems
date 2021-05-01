@@ -6,27 +6,43 @@
     <div>
         <img class="book-cover" src="<%= book.coverImagePath %>">
         <div class="book-details-btn-grid">
-            
-                <a class="btn btn-primary " href="/authors/<%= book.author.id %>">View Author</a>
-                <a class="btn btn-primary book-details-author-button" href="/topics/<%= book.topic.id %>">View Topic</a>
-            
+            <a class="btn btn-primary book-details-author-button" 
+            href="/authors/<%= book.author.id %>">View Author</a>
+        </div>
+        <div class="book-details-btn-grid">
+            <a class="btn btn-primary book-details-author-button" 
+            href="/topics/<%= book.topic.id %>">View Topic</a>
         </div>
     </div>
 
     <div class="book-details-grid">
         <div class="book-details-label"> ID:</div>
-        <div><%= book.id %></div>
+        <div>
+            <%= book.id %>
+        </div>
         <div class="book-details-label"> Topic:</div>
-        <div><%= book.topic.type %></div>
+        <div>
+            <%= book.topic.type %>
+        </div>
         <div class="book-details-label"> Author:</div>
-        <div><%= book.author.fullName %></div>
+        <div>
+            <%= book.author.fullName %>
+        </div>
         <div class="book-details-label"> ISBN:</div>
-        <div><%= book.ISBN %></div>
+        <div>
+            <%= book.ISBN %>
+        </div>
         <div class="book-details-label"> Publish Date:</div>
-        <div><%= book.publishDate.toDateString() %></div>
+        <div>
+            <%= book.publishDate.toDateString() %>
+        </div>
         <div class="book-details-label"> Page Count:</div>
-        <div><%= book.pageCount %></div>
+        <div>
+            <%= book.pageCount %>
+        </div>
         <div class="book-details-label"> Description:</div>
-        <div><%= book.description %></div>
+        <div>
+            <%= book.description %>
+        </div>
     </div>
 </div>
