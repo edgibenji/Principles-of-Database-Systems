@@ -15,11 +15,6 @@
     font-weight: var(--nav-title-font-weight);
 }
 
-.header-link {
-    font-family: 'AppleGaramond-Bold';
-    font-size: 0.75rem;
-}
-
 .header-nav {
     display: table;
     width: 100%;

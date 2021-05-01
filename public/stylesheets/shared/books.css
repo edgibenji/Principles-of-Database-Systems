@@ -41,6 +41,7 @@
     grid-gap: 1rem;
     grid-template-columns: auto auto;
     margin-left: 3rem;
+    font-family: 'PD';
   }
   
   .book-details-btn-grid {

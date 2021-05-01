@@ -1,5 +1,5 @@
 :root {
-    --form-lable-font-family:'Audrey';
+    --form-lable-font-family:'PD';
     --form-lable-font-size: 1rem;
     --form-lable-font-weight: 'bold';
     --form-input-background-color: hsl(var(--color-base-hue), 72%, 83%);
