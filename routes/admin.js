@@ -2,14 +2,6 @@ const express = require('express')
 const router = express.Router()
 const Admin = require('../models/admin')
 
-// create admin
-let admin = new Admin({
-    username: "edgibenji",
-    password: "123",
-    fullName: "Yulin Wang"
-})
-admin.save()
-
 // admin login route
 router.get('/login', (req, res) => {
     res.render('admin/login')
