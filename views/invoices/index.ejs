@@ -1,5 +1,12 @@
 <h2 class="page-header">Search Invoice</h2>
 <form action="/invoices" method="GET">
+
+    <div class="form-row">
+        <div class="form-item">
+            <label>Invoice ID</label>
+            <input type="text" name="invoiceID" value="<%= searchOptions.invoiceID %>">
+        </div>
+    </div>
     <div class="form-row">
         <div class="form-item">
             <label>Amount Above</label>
@@ -23,28 +30,28 @@
     </div>
 
     <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary"
-        type="submit">Search</button>
+        <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
 <br>
-<% invoices.forEach(invoice => { %>
+<% invoices.forEach(invoice=> { %>
     <div class="author-row">
+        <div class="author-name">
+            <%= invoice.invoiceID %>
+        </div>
         <div class="author-name">
             <%= invoice.dateGenerated.toDateString() %>
         </div>
         <div class="author-name">
-            <%= '$'+invoice.amount %>
+            <%= '$' +invoice.amount %>
         </div>
+        
     </div>
-    
+
     <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary"  
-        href="/invoices/<%= invoice.id %>">View</a>
-    
-        <a class="btn btn-primary"
-        href="/invoices/<%= invoice.id %>/edit">Edit</a>
+        <a class="btn btn-primary" href="/invoices/<%= invoice.id %>">View</a>
+
+        <a class="btn btn-primary" href="/invoices/<%= invoice.id %>/edit">Edit</a>
         <%- include('../partials/deleteForm', { url: `/invoices/${invoice.id}` }) %>
-    </div>    
+    </div>
     <% }) %>
-    

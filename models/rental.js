@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const rentalSchema = new mongoose.Schema({
+    rentalID: {
+        type: String,
+        required: true
+    },
     borrowDate: {
         type: Date,
         required: true

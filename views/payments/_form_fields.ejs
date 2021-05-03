@@ -16,9 +16,9 @@
         <select name="invoice">
             <% invoices.forEach(invoice => { %>
                 <% if (invoice.id===payment.invoice) { %>
-                    <option selected label="<%= invoice.id %>" value="<%= invoice.id %>">
+                    <option selected label="<%= invoice.invoiceID %>" value="<%= invoice.id %>">
                         <% } else { %>
-                    <option label="<%= invoice.id %>" value="<%= invoice.id %>">
+                    <option label="<%= invoice.invoiceID %>" value="<%= invoice.id %>">
                         <% } %>
                             <% }) %>
         </select>

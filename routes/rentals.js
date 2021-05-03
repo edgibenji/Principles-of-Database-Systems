@@ -7,6 +7,9 @@ const Copy = require('../models/copy')
 // all rentals route
 router.get('/', async (req, res) => {
     let query = Rental.find()
+    if (req.query.rentalID != null && req.query.rentalID != '') {
+        query = query.regex('rentalID', new RegExp(req.query.rentalID, 'i'))
+    }
     if (req.query.status != null && req.query.status != '') {
         query = query.regex('status', new RegExp(req.query.status, 'i'))
     }
@@ -38,6 +41,7 @@ router.post('/', async (req, res) => {
         borrowDate: new Date(req.body.borrowDate),
         expectedReturnDate: new Date(req.body.expectedReturnDate),
         actualReturnDate: new Date(req.body.actualReturnDate),
+        rentalID: req.body.rentalID,
         status: req.body.status,
         copy: req.body.copy,
         customer: req.body.customer
@@ -81,6 +85,7 @@ router.put('/:id', async (req, res) => {
         rental.borrowDate = new Date(req.body.borrowDate)
         rental.expectedReturnDate = new Date(req.body.expectedReturnDate)
         rental.actualReturnDate = new Date(req.body.actualReturnDate)
+        rental.rentalID = req.body.rentalID
         rental.status = req.body.status
         rental.copy = req.body.copy
         rental.customer = req.body.customer

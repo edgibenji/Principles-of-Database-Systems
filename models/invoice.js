@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const invoiceSchema = new mongoose.Schema({
+    invoiceID: {
+        type: String,
+        required: true
+    },
     dateGenerated: {
         type: Date
     },

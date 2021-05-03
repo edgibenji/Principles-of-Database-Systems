@@ -5,6 +5,10 @@
             <label>Status</label>
             <input type="text" name="status" value="<%= searchOptions.status %>">
         </div>
+        <div class="form-item">
+            <label>Rental ID</label>
+            <input type="text" name="rentalID" value="<%= searchOptions.rentalID %>">
+        </div>
     </div>
     <div class="form-row">
         <div class="form-item">
@@ -24,7 +28,7 @@
 <% rentals.forEach(rental=> { %>
     <div class="author-row">
         <div class="author-name">
-            <%= rental.id %>
+            <%= rental.rentalID %>
         </div>
         <div class="author-name">
             <%= rental.status %>

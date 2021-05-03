@@ -1,8 +1,15 @@
 <div class="form-row">
     <div class="form-item">
+        <label>Rental ID</label>
+        <input type="text" name="rentalID" value="<%= rental.rentalID %>">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-item">
         <label>Customer</label>
         <select name="customer">
-            <% customers.forEach(customer => { %>
+            <% customers.forEach(customer=> { %>
                 <% if (customer.id===rental.customer) { %>
                     <option selected label="<%= customer.fullName %>" value="<%= customer.id %>">
                         <% } else { %>
@@ -14,11 +21,11 @@
     <div class="form-item">
         <label>Copy</label>
         <select name="copy">
-            <% copies.forEach(copy => { %>
+            <% copies.forEach(copy=> { %>
                 <% if (copy.id===rental.copy) { %>
-                    <option selected label="<%= copy.id %>" value="<%= copy.id %>">
+                    <option selected label="<%= copy.copyID %>" value="<%= copy.id %>">
                         <% } else { %>
-                    <option label="<%= copy.id %>" value="<%= copy.id %>">
+                    <option label="<%= copy.copyID %>" value="<%= copy.id %>">
                         <% } %>
                             <% }) %>
         </select>
