@@ -47,9 +47,7 @@
     </div>
 </div>
 
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" href='/'>Logout</a>
-</div>
+
 
 <% if (invitations.length> 0) { %>
     <h2>Invitation</h2>
@@ -60,9 +58,12 @@
             </div>
         </div>
         <div class="form-row form-row-end btn-row">
-            <a class="btn btn-primary" 
-            href="/invitations/<%= invitation.id %>">View</a>
+            <a class="btn btn-primary" href="/invitations/<%= invitation.id %>">View</a>
         </div>
         <br>
         <% }) %>
             <% } %>
+
+                <div class="form-row form-row-end btn-row">
+                    <a class="btn btn-primary" href='/'>Logout</a>
+                </div>
