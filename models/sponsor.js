@@ -5,12 +5,7 @@ const sponsorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    firstName: {
-        type: String
-    },
-    lastName: {
-        type: String
-    },
+    
     name: {
         type: String,
         requried: true

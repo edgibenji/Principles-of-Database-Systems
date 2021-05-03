@@ -31,9 +31,8 @@ router.get('/new', async (req, res) => {
 // create sponsor route
 router.post('/', async (req, res) => {
     const sponsor = new Sponsor({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        name: req.body.firstName + ' ' + req.body.lastName,
+        
+        name: req.body.name,
         type: req.body.type
     })
     saveCover(sponsor, req.body.cover)
@@ -70,9 +69,8 @@ router.put('/:id', async (req, res) => {
     let sponsor
     try {
         sponsor = await Sponsor.findById(req.params.id)
-        sponsor.firstName = req.body.firstName
-        sponsor.lastName = req.body.lastName
-        sponsor.name = req.body.firstName + ' ' + req.body.lastName
+        
+        sponsor.name = req.body.name
         sponsor.type = req.body.type
         if (req.body.cover != null && req.body.cover !== '') {
             saveCover(sponsor, req.body.cover)
