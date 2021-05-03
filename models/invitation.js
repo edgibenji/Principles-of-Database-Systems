@@ -6,6 +6,10 @@ const invitationSchema = new mongoose.Schema({
         required: true,
         default: Date.now
     },
+    invID: {
+        type: String,
+        require: true
+    },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,

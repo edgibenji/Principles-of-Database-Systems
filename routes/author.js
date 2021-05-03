@@ -2,7 +2,9 @@ const express = require('express')
 const router = express.Router()
 const Author = require('../models/author')
 const Book = require('../models/book')
+const Invitation = require('../models/invitation')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
+
 
 // author login route
 router.get('/login', (req, res) => {
@@ -14,11 +16,15 @@ router.post('/login', async (req, res) => {
     var username = req.body.username
     var password = req.body.password
     const author = await Author.findOne({ username: username, password: password })
+    const invitations = await Invitation.find({ author: author })
     if (!author) {
         res.render('author/login', { errorMessage: 'Error Login in' })
     }
     else {
-        res.render('author', { author: author })
+        res.render('author', { 
+            author: author,
+            invitations: invitations
+        })
     }
 })
 
@@ -52,6 +58,7 @@ router.post('/register', async (req, res) => {
         res.render('author/register', {
             author: author,
             errorMessage: 'Error Register Author'
+            
         })
     }
 })

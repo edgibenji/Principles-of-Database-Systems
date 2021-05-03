@@ -2,9 +2,6 @@
     <%= author.fullName %>
 </h1>
 
-
-
-
 <h2 class="header-nav">
     <ul>
         <li><a href="/books">Books</a></li>
@@ -53,3 +50,19 @@
 <div class="form-row form-row-end btn-row">
     <a class="btn btn-primary" href='/'>Logout</a>
 </div>
+
+<% if (invitations.length> 0) { %>
+    <h2>Invitation</h2>
+    <% invitations.forEach(invitation=> { %>
+        <div class="author-row">
+            <div class="author-name">
+                Invitation ID: <%= invitation.invID %>
+            </div>
+        </div>
+        <div class="form-row form-row-end btn-row">
+            <a class="btn btn-primary" 
+            href="/invitations/<%= invitation.id %>">View</a>
+        </div>
+        <br>
+        <% }) %>
+            <% } %>

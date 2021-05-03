@@ -7,9 +7,10 @@ const Event = require('../models/event')
 // all registrations route
 router.get('/', async (req, res) => {
     let query = Registration.find()
-    if (req.query.id != null && req.query.id != '') {
-        query = query.regex('id', new RegExp(req.query.id, 'i'))
+    if (req.query.regID != null && req.query.regID != '') {
+        query = query.regex('regID', new RegExp(req.query.regID, 'i'))
     }
+    
     try {
         const registrations = await query.exec()
         res.render('registrations/index', {
@@ -29,6 +30,7 @@ router.get('/new', async (req, res) => {
 // create registration route
 router.post('/', async (req, res) => {
     const registration = new Registration({
+        regID: req.body.regID,
         customer: req.body.customer,
         event: req.body.event
     })
@@ -68,6 +70,7 @@ router.put('/:id', async (req, res) => {
     let registration
     try {
         registration = await Registration.findById(req.params.id)
+        registration.regID = req.body.regID
         registration.customer = req.body.author
         registration.event = req.body.event
         await registration.save()

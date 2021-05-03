@@ -9,6 +9,9 @@ router.get('/', async (req, res) => {
     if (req.query.status != null && req.query.status != '') {
         query = query.regex('status', new RegExp(req.query.status, 'i'))
     }
+    if (req.query.copyID != null && req.query.copyID != '') {
+        query = query.regex('copyID', new RegExp(req.query.copyID, 'i'))
+    }
     try {
         const copies = await query.exec()
         res.render('copies/index', {
@@ -28,6 +31,7 @@ router.get('/new', async (req, res) => {
 // create copy route
 router.post('/', async (req, res) => {
     const copy = new Copy({
+        copyID: req.body.copyID,
         description: req.body.description,
         status: req.body.status,
         book: req.body.book
@@ -67,6 +71,7 @@ router.put('/:id', async (req, res) => {
     let copy
     try {
         copy = await Copy.findById(req.params.id)
+        copy.copyID = req.body.copyID
         copy.description = req.body.description
         copy.status = req.body.status
         copy.book = req.body.book

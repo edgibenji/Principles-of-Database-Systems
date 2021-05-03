@@ -2,8 +2,8 @@
 <form action="/invitations" method="GET">
     <div class="form-row">
         <div class="form-item">
-            <label>ID</label>
-            <input type="text" name="id" value="<%= searchOptions.id %>">
+            <label>Invitation ID</label>
+            <input type="text" name="invID" value="<%= searchOptions.invID %>">
         </div>
     </div>
 
@@ -16,7 +16,7 @@
 <% invitations.forEach(invitation => { %>
     <div class="author-row">
         <div class="author-name">
-            <%= invitation.id %>
+            <%= invitation.invID %>
         </div>
     </div>
 

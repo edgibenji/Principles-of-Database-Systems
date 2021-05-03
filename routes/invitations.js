@@ -7,8 +7,8 @@ const Event = require('../models/event')
 // all invitations route
 router.get('/', async (req, res) => {
     let query = Invitation.find()
-    if (req.query.id != null && req.query.id != '') {
-        query = query.regex('id', new RegExp(req.query.id, 'i'))
+    if (req.query.invID != null && req.query.invID != '') {
+        query = query.regex('invID', new RegExp(req.query.invID, 'i'))
     }
     try {
         const invitations = await query.exec()
@@ -29,6 +29,7 @@ router.get('/new', async (req, res) => {
 // create invitation route
 router.post('/', async (req, res) => {
     const invitation = new Invitation({
+        invID: req.body.invID,
         author: req.body.author,
         event: req.body.event
     })
@@ -68,6 +69,7 @@ router.put('/:id', async (req, res) => {
     let invitation
     try {
         invitation = await Invitation.findById(req.params.id)
+        invitation.invID = req.body.invID
         invitation.author = req.body.author
         invitation.event = req.body.event
         await invitation.save()

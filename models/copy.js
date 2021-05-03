@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const copySchema = new mongoose.Schema({
+    copyID: {
+        type: String,
+        require: true
+    },
     status: {
         type: String,
         required: true

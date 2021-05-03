@@ -6,30 +6,32 @@
             <input type="text" name="status" value="<%= searchOptions.status %>">
         </div>
     </div>
-
-    <div class="form-row form-row-end btn-row">
-        <button class = "btn btn-primary" 
-        type="submit">Search</button>
+    <div class="form-row">
+        <div class="form-item">
+            <label>Copy ID</label>
+            <input type="text" name="copyID" value="<%= searchOptions.copyID %>">
+        </div>
     </div>
-    
+    <div class="form-row form-row-end btn-row">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
 </form>
 <br>
-<% copies.forEach(copy => { %>
+
+<% copies.forEach(copy=> { %>
     <div class="author-row">
-        <div class="author-name"> <%= copy.id %>
+        <div class="author-name">
+            <%= copy.copyID %>
         </div>
         <div class="author-name">
             <%= copy.status %>
         </div>
     </div>
-    
-    
+
+
     <div class="form-row form-row-end btn-row">
-        <a class="btn btn-primary" 
-        href="/copies/<%= copy.id %>">View</a>
-        <a class="btn btn-primary" 
-        href="/copies/<%= copy.id %>/edit">Edit</a> 
+        <a class="btn btn-primary" href="/copies/<%= copy.id %>">View</a>
+        <a class="btn btn-primary" href="/copies/<%= copy.id %>/edit">Edit</a>
         <%- include('../partials/deleteForm', { url: `/copies/${copy.id}` }) %>
     </div>
-        <% }) %>
-    
+    <% }) %>

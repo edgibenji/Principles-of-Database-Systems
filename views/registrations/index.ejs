@@ -2,8 +2,8 @@
 <form action="/registrations" method="GET">
     <div class="form-row">
         <div class="form-item">
-            <label>ID</label>
-            <input type="text" name="id" value="<%= searchOptions.id %>">
+            <label>Registration ID</label>
+            <input type="text" name="regID" value="<%= searchOptions.id %>">
         </div>
     </div>
     <div class="form-row form-row-end btn-row">
@@ -14,7 +14,7 @@
 <% registrations.forEach(registration=> { %>
     <div class="author-row">
         <div class="author-name">
-            <%= registration.id %>
+            <%= registration.regID %>
         </div>
     </div>
     <div class="form-row form-row-end btn-row">

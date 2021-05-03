@@ -6,6 +6,10 @@ const registrationSchema = new mongoose.Schema({
         required: true,
         default: Date.now
     },
+    regID: {
+        type: String,
+        require: true
+    },
     customer: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
