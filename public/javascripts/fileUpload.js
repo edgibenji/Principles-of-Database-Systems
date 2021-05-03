@@ -1,4 +1,4 @@
-const rootStyles = window.getComputedStyle(document.documentElement)
+/*const rootStyles = window.getComputedStyle(document.documentElement)
 
 if (rootStyles.getPropertyValue('--book-cover-width-large') != null && rootStyles.getPropertyValue('--book-cover-width-large') !== '') {
   ready()
@@ -23,4 +23,18 @@ function ready() {
   })
   
   FilePond.parse(document.body)
-}
+} */
+
+FilePond.registerPlugin(
+  FilePondPluginImagePreview,
+  FilePondPluginImageResize,
+  FilePondPluginFileEncode,
+)
+
+FilePond.setOptions({
+  stylePanelAspectRatio: 150 / 100,
+  imageResizeTargetWidth: 100,
+  imageResizeTargetHeight: 150
+})
+
+FilePond.parse(document.body);
