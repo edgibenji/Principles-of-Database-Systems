@@ -1,44 +1,55 @@
-<h1 class="page-header" >Welcome Author
+<h1 class="page-header">Welcome Author
     <%= author.fullName %>
 </h1>
 
+
+
+
+<h2 class="header-nav">
+    <ul>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/topics">Topics</a></li>
+        <li><a href="/rooms">Rooms</a></li>
+    </ul>
+</h2>
+
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href="/author/<%= author.id %>">Profile</a>
+    </div>
+    <div class='index-item-right'>
+        <a class='index-text' href='/events'>Events</a>
+    </div>
+</div>
+
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href='/books'>Books</a>
+    </div>
+    <div class='index-item-right'>
+        <a class='index-text' href='/books/new'>Add Book</a>
+    </div>
+</div>
+
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href='/topics'>Topics</a>
+    </div>
+    <div class='index-item-right'>
+        <a class='index-text' href='/invitations/new'>Add Invitation</a>
+    </div>
+</div>
+
+<div class='index-row'>
+    <div class='index-item-left'>
+        <a class='index-text' href='/sponsors/new'>Sponsorship</a>
+    </div>
+    <div class='index-item-right'>
+        <a class='index-text' href='/funds/new'>Add Fund</a>
+    </div>
+</div>
+
 <div class="form-row form-row-end btn-row">
     <a class="btn btn-primary" href='/'>Logout</a>
-</div>
-
-
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-      <a class = 'index-text' href="/author/<%= author.id %>">Profile</a>
-    </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/events'>Events</a>
-    </div>
-</div>
-
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-        <a class = 'index-text' href='/books'>Books</a>
-      </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/books/new'>Add Book</a>
-    </div>
-</div>
-
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-        <a class = 'index-text' href='/topics'>Topics</a>
-    </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/invitations/new'>Add Invitation</a>
-    </div>
-</div>
-
-<div class = 'index-row'>
-    <div class = 'index-item-left'>
-        <a class = 'index-text' href='/sponsors/new'>Sponsorship</a>
-    </div>
-    <div class = 'index-item-right'>
-        <a class = 'index-text' href='/funds/new'>Add Fund</a>
-    </div>
 </div>

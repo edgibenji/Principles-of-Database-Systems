@@ -2,9 +2,15 @@
     <%= customer.fullName %>
 </h1>
 
-<div class="form-row form-row-end btn-row">
-    <a class="btn btn-primary" href='/'>Logout</a>
-</div>
+<h2 class="header-nav">
+    <ul>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/topics">Topics</a></li>
+        <li><a href="/rooms">Rooms</a></li>
+    </ul>
+</h2>
+
 
 <div class='index-row'>
     <div class='index-item-left'>
@@ -135,3 +141,7 @@
                                                                         <br>
                                                                         <% }) %>
                                                                             <% } %>
+                                                                            
+                                                                            <div class="form-row form-row-end btn-row">
+                                                                                <a class="btn btn-primary" href='/'>Logout</a>
+                                                                            </div>

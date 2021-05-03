@@ -21,7 +21,7 @@
     flex-wrap: wrap;
     justify-content:flex-start;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .header-nav ul {
@@ -30,6 +30,7 @@
     justify-content:space-around;
     margin: 0;
     padding: 0;
+
 }
 
 .header-nav li {
