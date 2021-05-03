@@ -3,15 +3,17 @@
         <label>Type</label>
         <input type="text" name="type" value="<%= topic.type %>">
     </div>
-    <div class="form-item">
-        <label>Description</label>
-        <textarea name="description"><%= topic.description %></textarea>
-    </div>
+
 </div>
 
 <div class="form-row">
+    
     <div class="form-item form-item-no-grow">
         <label>Topic Image</label>
         <input type="file" name="cover" class="book-cover filepond">
+    </div>
+    <div class="form-item">
+        <label>Description</label>
+        <textarea name="description"><%= topic.description %></textarea>
     </div>
 </div>
