@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const fundSchema = new mongoose.Schema({
+    fundID: {
+        type: String,
+        required: true
+    },
     amount: {
         type: Number,
         required: true

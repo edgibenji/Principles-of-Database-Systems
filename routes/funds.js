@@ -7,6 +7,9 @@ const Sponsor = require('../models/sponsor')
 // all funds route
 router.get('/', async (req, res) => {
     let query = Fund.find()
+    if (req.query.fundID != null && req.query.fundID != '') {
+        query = query.lte('fundID', req.query.fundID)
+    }
     if (req.query.amountUnder != null && req.query.amountUnder != '') {
         query = query.lte('amount', req.query.amountUnder)
     }
@@ -32,6 +35,7 @@ router.get('/new', async (req, res) => {
 // create fund route
 router.post('/', async (req, res) => {
     const fund = new Fund({
+        fundID: req.body.fundID,
         amount: req.body.amount,
         event: req.body.event,
         sponsor: req.body.sponsor
@@ -72,6 +76,7 @@ router.put('/:id', async (req, res) => {
     let fund
     try {
         fund = await Fund.findById(req.params.id)
+        fund.fundID = req.body.fundID
         fund.event = req.body.event
         fund.sponsor = req.body.sponsor
         fund.amount = req.body.amount
